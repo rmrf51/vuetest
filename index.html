@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Test vue.js</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+
+
+	<div id="app">
+		<!-- v-on = @ -->
+		<span v-on:click="title='Клик'">Текст</span>
+		<span @click="title='Собака'">Текст</span>
+		<span v-on:mouseover="title='МышьНаВодку'">Текст</span>
+		<span @click="changeText">Функция</span>
+
+
+		<p>{{ title }}</p>
+		<!-- v-bind = : чтоб работало styleCSS (цвета меняются)-->
+		<p v-bind:class="styleCSS">Color: {{ styleCSS }}</p>
+		<p :class="styleCSS">Color: {{ styleCSS }}</p>
+		<input type="text" @input="styleCSS = $event.target.value">
+	</div>
+
+
+
+        <div id="app1">
+            <span v-if="seen">Now you see me</span>
+        </div>
+
+	<div id="app-4">
+	  	<ol>
+	    	<li v-for="todo in todos">
+	      	{{ todo.text }}
+	   		</li>
+	  	</ol>
+	</div>
+
+<!--  	<div id="appp">
+
+		<br>
+		<input type="text" v-on:input="increment($event.targer.value)">
+		<p>{{ value }}</p>
+		<p>{{ doubleValue }}</p>
+		
+
+	</div>  -->
+
+	<script src="js/script.js"></script>
+</body>
+</html>
